@@ -72,7 +72,6 @@ function startGame() {
 }
 
 function showScore(arr) {
-    //console.log(arr.length);
     hits = arr.length;
     showPercentage.innerHTML = `${percentageF(arr.length)}`;
 }
@@ -84,10 +83,7 @@ function percentageF(hits){
 
 // when click button start game
 btnPlay.addEventListener('click', () => {
-    //setInterval(startGame, 99000);
     startGame();
-    //showScore(arrayCount);
-    //clearInterval(timer, 99000);
     console.log('PLaying');
 });
 
