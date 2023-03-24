@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head> 
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Laura Tejada" />
+        <meta name="description" content="Fast typing Game" />
+        <title>Fast typing Game</title>
+        <link 
+        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">     
+        <link rel="stylesheet" href="styles/index.css" media="all">
+        <script src="scripts/index.js" type="module">   </script>
+    </head>
+    <body class="backimage">
+        <main>
+            <div class="rocket"> 
+                <div class="move-y">
+                    <img src="images/rocket-h.png" alt="" height="70px">
+                </div>
+            </div>
+            <section>
+                <div class="container">
+
+                    <div class="score">
+                        <div>Score: </div>
+                        <div class="percentage">100</div>
+                    </div>
+                    <div class="timer">
+                        <div>Time: </div>
+                        <div class="seconds">99s</div>
+                    </div>
+                    <div class="title"><h3>Typing game</h3></div>
+                    <div class="text-input">
+                        <p> 
+                            <i class="fa fa-anchor"></i>
+                            <span>word</span>
+                        </p>
+                        <input class="input" type="text" title="input" placeholder="Type here">
+                    </div>
+                    <div class="play-button">
+                        <button class="button">Play</button>
+                    </div>
+                    <div class="message">
+                        <p>**Press ENTER to write the next word!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

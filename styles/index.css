@@ -1,0 +1,198 @@
+@import url(reset.css);
+
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+.backimage {
+    background-image: url(../images/background-image.jpg);
+    background-repeat: repeat-x;
+    background-position: bottom left;
+}
+
+.rocket {
+    position: absolute; 
+    top: 10px; 
+    left: 0px;
+}
+
+.move-y {
+    animation: translate-y 20s ease-in-out infinite;
+} 
+
+main {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+section {
+    width: 500px;
+    height: 400px;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    background: rgb(55,141,185);
+    background: linear-gradient(177deg, rgba(55,141,185,1) 0%, rgba(61,201,212,1) 100%);
+    border-radius: 20px;
+    border: 10px double rgb(45, 81, 136);
+}
+
+.container {
+    width: 100%; /* min(100% - 30px, 1080px);*/
+    margin-inline: auto;
+}
+
+div {
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+div.title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #a52a2a;
+}
+
+div.score, div.timer {
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 2.5rem 2.5rem;
+    grid-auto-flow: column;
+}
+
+div.score {
+    width: 50%;
+    float: left;
+    font-size: 15px;
+    place-content: start;
+}
+
+div.timer {
+    width: 50%;
+    float: right;
+    font-size: 15px;
+    place-content: end;
+}
+
+.score div , .timer div {
+    font-size: 15px;
+}
+
+.hour, .minutes, .seconds, .dots {
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+}
+
+div.text-input {
+    margin-top: 30px;
+    font-size: 2rem;
+    font-weight: 400;
+    height: 150px;
+}
+
+div.play-button {
+    margin-top: 10px; 
+}
+
+input {
+    width: 60%;
+    text-align: center;
+    background:transparent;
+    color: #a52a2a;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.2px; 
+    padding: 5px 35px;
+    border-bottom: 4px solid #a52a2a;
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+/*
+div.invalid-message {
+    padding-top: 10px;
+    color: rgb(240, 0, 0);
+    font-size: 14px;
+    height: 50px;
+}
+*/
+
+.message p {
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.show {
+    display: block;
+}
+
+button {
+    margin-left: 10px;
+    width: 60%;
+    cursor: pointer;
+    background: rgb(255, 157, 32);
+    color: #6C1B01;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 3px 4px 4px #6C1B01;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: all 0.25s ease-in-out;
+    padding: 10px 35px;
+}
+
+button:hover {
+    box-shadow: 3px 4px 4px #635100;
+    background: rgb(255, 157, 32);
+    background: linear-gradient(180deg, rgba(255, 157, 32) 0%, rgb(255, 157, 32) 40%, rgb(255, 210, 150) 100%);
+}
+
+/* ------------------------------- */
+/* Bounce                          */
+/* ------------------------------- */
+
+.bounce {
+    animation: bounce 2.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 50%, 100% { translate: 0 0; }
+    25%, 75% { translate: 0 -15px; }
+}
+
+/* ------------------------------- */
+/* Translate-x                          */
+/* ------------------------------- */
+
+.translate-y {
+    animation: translate-y 2.5s linear infinite;
+}
+
+@keyframes translate-y {
+    0%  { translate: -10vw 0; }
+    /*
+    10% { translate: 0 -10vh; }
+    20% { translate: 0 -20vh; }
+    30% { translate: 0 -30vh; }
+    40% { translate: 0 -40vh; }
+    50% { translate: 0 -50vh; }
+
+    60% { translate: 0 -60vh; }
+    70% { translate: 0 -70vh; }
+    80% { translate: 0 -80vh; }
+    90% { translate: 0 -90vh; }
+    */
+    100% { translate: 100vw 0; }
+}
