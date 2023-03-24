@@ -14,7 +14,8 @@ const wordsArray = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'build
 'keyboard', 'window'];
 
 function randomArray() {
-    
+    const shuffledArray = wordsArray.sort((a, b) => 0.5 - Math.random());
+    return shuffledArray;
 }
 
 export { wordsArray, randomArray};

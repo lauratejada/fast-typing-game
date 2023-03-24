@@ -17,8 +17,8 @@ body {
     left: 0px;
 }
 
-.move-y {
-    animation: translate-y 20s ease-in-out infinite;
+.move-x {
+    animation: translate-x 20s ease-in-out infinite;
 } 
 
 main {
@@ -93,7 +93,7 @@ div.timer {
 
 div.text-input {
     margin-top: 30px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 400;
     height: 150px;
 }
@@ -173,14 +173,14 @@ button:hover {
 }
 
 /* ------------------------------- */
-/* Translate-x                          */
+/* Translate-y                          */
 /* ------------------------------- */
 
-.translate-y {
-    animation: translate-y 2.5s linear infinite;
+.translate-x {
+    animation: translate-x 2.5s linear infinite;
 }
 
-@keyframes translate-y {
+@keyframes translate-x {
     0%  { translate: -10vw 0; }
     /*
     10% { translate: 0 -10vh; }
