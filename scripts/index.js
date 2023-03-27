@@ -5,6 +5,7 @@ import { wordsArray, randomArray } from './array.js';
 
 const showSeconds = document.querySelector('.seconds');
 const showPercentage = document.querySelector('.percentage');
+const score = document.querySelector('.score');
 const input = document.querySelector('.input');
 const showWords = document.querySelector('span');
 const btnPlay = document.querySelector('.button');
@@ -46,19 +47,21 @@ function startGame() {
     hits = 0;
     sec = 99; // 99 seconds
     let timer = setInterval(function(){
-        if(sec > -1) {
+        if(sec > -1 ) {
             showSeconds.innerHTML = `${sec}`;
             sec = sec - 1; 
             gameSound.play();
             btnPlay.parentElement.style.display = 'none';
             input.parentElement.style.display = 'block';
             showPercentage.innerHTML = `0`;
+            score.style.display = 'none';
         } else {
             gameSound.pause();
             input.parentElement.style.display = 'none';
             btnPlay.parentElement.style.display = 'block'; 
             clearInterval(timer);
             showScore(arrayCount);
+            score.style.display = 'flex';
             // score is shown when the game ends
             try {
                 const newScore = new Score(new Date().toDateString(), hits, percentage);
