@@ -10,6 +10,7 @@ const input = document.querySelector('.input');
 const showWords = document.querySelector('span');
 const btnPlay = document.querySelector('.button');
 const highScores = document.querySelector('.scores');
+const content = document.querySelector('.content');
 const backOpen = document.querySelector('.background-opacity-nav-open');
 const scoresContent = document.querySelector('.scores-content');
 const gameSound = new Audio('./assets/audio/game-sound.wav');
@@ -45,7 +46,7 @@ function validateAndShow(words, hitsCounter) {
                     arrayCount.push(words.at(i));
                     input.value = '';
                     hitsCounter++;
-                    console.log(hitsCounter);
+                    //console.log(hitsCounter);
                     if(arrayCount.length < words.length) {
                         showWords.innerHTML = words[arrayCount.length];
                     } else {
@@ -93,8 +94,13 @@ function startGame() {
             
             // score is shown when the game ends
             try {
-                      
-                const scores = JSON.parse(localStorage.getItem('games')) || [];
+                
+                console.log(localStorage ? 'Localstorage not empty' : 'storage empty');
+                console.log(localStorage.getItem('games'));
+                const scores = (localStorage.getItem('games') !== 'undefined') ? JSON.parse(localStorage.getItem('games')) : [];
+               //console.log(localStorage.getItem('games'));
+                console.log(scores.length);
+                
 
                 const addScoreToArray = (date, hits, perc) => {
                     scores.push({date, hits, perc});
@@ -108,31 +114,30 @@ function startGame() {
                 // sort array to display scores
                 //so sort and ‘splice’ the array before ‘stringifying’ it
                 //let sortedScores = 
-                scores.sort(
-                    //(s1, s2) => {s2.hits - s1.hits});
-                    (s1, s2) => (s1.hits < s2.hits) ? 1 : (s1.hits > s2.hits) ? -1 : 0);
-                //console.log(scores);
+                if(scores.length >= 2) {
+                    scores.sort((s1, s2) => (s1.hits < s2.hits) ? 1 : (s1.hits > s2.hits) ? -1 : 0);
+                }
+                console.log(scores);
                 //sortedScores.splice(8, sortedScores.length - 8);
-                scores.splice(9, scores.length - 9);
-                //console.log(scores);
+                //let subScores;
+                if(scores.length > 9) {
+                    //subScores = scores.splice(0, 9);//
+                    scores.splice(9, scores.length - 9);
+                }
 
-                /*
-                const showScoreDivs = ({date, hits, perc}, index) => {  
-                    console.log(scores);
-                    const getScore = document.createElement('div');
-                    getScore.classList.add('get-score');
-                    const divOrder = document.createElement('div');
-                    const divHits = document.createElement('div');
-                    const divPerc = document.createElement('div');
-                    divOrder.innerText = '#' + `${index + 1}`;
-                    divHits.innerText = ''+ `${hits}` + ' words' ;
-                    divPerc.innerText = ''+ `${perc}` + '%' ;
-                    getScore.append(divOrder, divHits, divPerc);
-                    scoresContent.appendChild(getScore);
-                }*/
-
+                localStorage.setItem('games', JSON.stringify(scores));
+                //const scores1 = JSON.parse(localStorage.getItem('games')) || [];
                 //scores.forEach(showScoreDivs);
+                //console.log(scores1);
+
+                // if empty not display
                 function showScoreDivs() {
+
+                    const scoresContent = document.createElement('div');
+                    scoresContent.classList.add('scores-content');
+
+                    content.replaceChildren(scoresContent);
+
                     for(let i = 0; i < scores.length; i++) {
                         //console.log(scores);
                         const getScore = document.createElement('div');
@@ -147,9 +152,15 @@ function startGame() {
                         scoresContent.appendChild(getScore);
                     }
                 }
-                showScoreDivs();
 
-                localStorage.setItem('games', JSON.stringify(scores));
+                if(score.length === 0) {
+                    highScores.classList.add('not-show');
+                    backOpen.classList.add('not-show');
+                } else {
+                    showScoreDivs();
+                }
+
+
 
                // console.log(scores);
                //console.log(sortedScores);
