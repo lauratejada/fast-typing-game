@@ -95,13 +95,10 @@ function startGame() {
             // score is shown when the game ends
             try {
                 
-                console.log(localStorage ? 'Localstorage not empty' : 'storage empty');
-                console.log(localStorage.getItem('games'));
-                const scores = (localStorage.getItem('games') !== 'undefined') ? JSON.parse(localStorage.getItem('games')) : [];
-               //console.log(localStorage.getItem('games'));
-                console.log(scores.length);
-                
+                const scores = JSON.parse(localStorage.getItem('games')) || [];
 
+                console.log(`score length`,scores.length);
+                
                 const addScoreToArray = (date, hits, perc) => {
                     scores.push({date, hits, perc});
                     //localStorage.setItem('games', JSON.stringify(scores));
