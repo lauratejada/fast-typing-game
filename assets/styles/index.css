@@ -113,6 +113,7 @@ input {
     letter-spacing: 0.2px; 
     padding: 5px 35px;
     border-bottom: 4px solid #a52a2a;
+    text-transform: lowercase;
 }
 
 input::placeholder {
@@ -195,4 +196,56 @@ button:hover {
     90% { translate: 0 -90vh; }
     */
     100% { translate: 100vw 0; }
+}
+
+
+.show-scores {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    width: 250px;
+    height: 100vh;
+    transition: all 0.25s ease-out;
+}
+
+.background-opacity-nav-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.show {
+    display: grid;
+}
+
+.not-show {
+    display: none;
+}
+
+.scores-title{
+    padding-top: 20px;
+}
+
+.scores-content {
+    padding: 20px;
+}
+
+.get-score {
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 2em 5em 3em;
+    grid-auto-flow: column;
+    place-content: center;
+}
+
+.get-score div {
+    font-size: 18px;
 }

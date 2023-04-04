@@ -13,14 +13,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">     
-        <link rel="stylesheet" href="styles/index.css" media="all">
-        <script src="scripts/index.js" type="module">   </script>
+        <link rel="stylesheet" href="assets/styles/index.css" media="all">
+        <script src="assets/scripts/index.js" type="module">   </script>
     </head>
     <body class="backimage">
         <main>
             <div class="rocket"> 
                 <div class="move-x">
-                    <img src="images/rocket-h.png" alt="" height="70px">
+                    <img src="assets/images/rocket-h.png" alt="" height="70px">
                 </div>
             </div>
             <section>
@@ -40,16 +40,28 @@
                             <i class="fa fa-anchor"></i>
                             <span>word</span>
                         </p>
-                        <input class="input" type="text" title="input" placeholder="Type here">
+                        <input class="input" type="text" title="input" placeholder="Type here" autofocus>
                     </div>
                     <div class="play-button">
                         <button class="button">Play</button>
                     </div>
                     <div class="message">
-                        <p>**Press ENTER to write the next word!</p>
+                        <p>*Type as fast as you can! Press PLAY to start!</p>
                     </div>
                 </div>
             </section>
+
+            <!--modal rigth side-->
+            <div class="scores">
+                <div class="scores-title">
+                    <h5>High Scores</h5>
+                </div>
+                <div class="scores-content">
+
+                </div>
+            </div>
+            <div class="background-opacity-nav-open not-show"></div>
+            <!---->
         </main>
     </body>
 </html>

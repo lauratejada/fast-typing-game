@@ -1,4 +1,6 @@
-const wordsArray = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population',
+const wordsArray = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot']; 
+/*
+'building', 'population',
 'weather', 'bottle', 'history', 'dream', 'character', 'money', 'absolute',
 'discipline', 'machine', 'accurate', 'connection', 'rainbow', 'bicycle',
 'eclipse', 'calculator', 'trouble', 'watermelon', 'developer', 'philosophy',
@@ -12,6 +14,7 @@ const wordsArray = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'build
 'fantastic', 'economy', 'interview', 'awesome', 'challenge', 'science', 'mystery',
 'famous', 'league', 'memory', 'leather', 'planet', 'software', 'update', 'yellow',
 'keyboard', 'window'];
+*/
 
 function randomArray() {
     const shuffledArray = wordsArray.sort((a, b) => 0.5 - Math.random());
