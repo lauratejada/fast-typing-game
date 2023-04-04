@@ -96,45 +96,32 @@ function startGame() {
             try {
                 
                 const scores = JSON.parse(localStorage.getItem('games')) || [];
-
-                console.log(`score length`,scores.length);
-                
+                //console.log(`score length`,scores.length);
                 const addScoreToArray = (date, hits, perc) => {
                     scores.push({date, hits, perc});
-                    //localStorage.setItem('games', JSON.stringify(scores));
                     return {date, hits, perc};
                 };
                 
-                //const newScore = new Score(new Date().toDateString(), hits, percentage);
                 const newScore = addScoreToArray(new Date().toDateString(), hits, percentage);
                 console.log(newScore);   
                 // sort array to display scores
                 //so sort and ‘splice’ the array before ‘stringifying’ it
-                //let sortedScores = 
                 if(scores.length >= 2) {
                     scores.sort((s1, s2) => (s1.hits < s2.hits) ? 1 : (s1.hits > s2.hits) ? -1 : 0);
                 }
                 console.log(scores);
-                //sortedScores.splice(8, sortedScores.length - 8);
-                //let subScores;
+
                 if(scores.length > 9) {
                     //subScores = scores.splice(0, 9);//
                     scores.splice(9, scores.length - 9);
                 }
 
                 localStorage.setItem('games', JSON.stringify(scores));
-                //const scores1 = JSON.parse(localStorage.getItem('games')) || [];
-                //scores.forEach(showScoreDivs);
-                //console.log(scores1);
 
-                // if empty not display
                 function showScoreDivs() {
-
                     const scoresContent = document.createElement('div');
                     scoresContent.classList.add('scores-content');
-
                     content.replaceChildren(scoresContent);
-
                     for(let i = 0; i < scores.length; i++) {
                         //console.log(scores);
                         const getScore = document.createElement('div');
@@ -149,7 +136,7 @@ function startGame() {
                         scoresContent.appendChild(getScore);
                     }
                 }
-
+                // if empty not display
                 if(score.length === 0) {
                     highScores.classList.add('not-show');
                     backOpen.classList.add('not-show');
@@ -157,16 +144,6 @@ function startGame() {
                     showScoreDivs();
                 }
 
-
-
-               // console.log(scores);
-               //console.log(sortedScores);
-
-                //const newScore = addScoreToArray(new Date().toDateString(), hits, percentage);
-
-               // showScoreDivs(newScore, scores.length - 1);
-       
-                
             } catch(error) {
                 console.log(error.message);
             }
